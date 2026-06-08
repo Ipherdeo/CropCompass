@@ -1092,8 +1092,15 @@ function YieldInput({ crop, hectares, yieldPerHa, onChange }) {
     setRawCount(String(Math.round(tPerHa * hectares / u.ratio)));
   }
 
-  const sliderMax = Math.round(u.peakPerHa * hectares);
-  const sliderMin = Math.max(1, Math.round(meta.yieldRange.min * hectares / u.ratio));
+  // sliderMax: farmer-confirmed realistic cap per farm in current unit.
+  // sliderMin is always 1 — deriving it from yieldRange.min causes inversion when
+  // the typical floor (in t/ha) converts to MORE local units than peakPerHa allows
+  // (e.g. Yam tubers: yieldRange.min=2.5 t/ha → 1012 tubers/ha > peakPerHa=1500 cap on small farms).
+  // The out-of-range warning handles feedback; the slider should never be inverted.
+  const sliderMax  = Math.max(1, Math.round(u.peakPerHa * hectares));
+  const sliderStep = Math.max(1, Math.round(sliderMax / 200)); // ~200 steps across the range
+  // Clamp slider thumb only — typed value is unrestricted (warning shown instead).
+  const sliderVal  = Math.min(Math.max(1, Math.round(localCountFromYield)), sliderMax);
 
   return (
     <div style={{ marginBottom: 20 }}>
@@ -1141,17 +1148,17 @@ function YieldInput({ crop, hectares, yieldPerHa, onChange }) {
       )}
       <input
         type="range"
-        min={sliderMin}
+        min={1}
         max={sliderMax}
-        step={1}
-        value={Math.min(Math.round(localCountFromYield), sliderMax)}
+        step={sliderStep}
+        value={sliderVal}
         aria-label="Expected harvest slider"
         onChange={e => commitCount(e.target.value)}
         style={{ width: "100%", accentColor: T.amber, cursor: "pointer" }}
       />
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, color: T.textFaint, marginTop: 2 }}>
-        <span>{sliderMin} {u.label}</span>
-        <span>{sliderMax} {u.label}</span>
+        <span>1 {u.label}</span>
+        <span>{sliderMax.toLocaleString()} {u.label}</span>
       </div>
     </div>
   );
