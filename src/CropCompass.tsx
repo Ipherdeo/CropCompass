@@ -769,7 +769,7 @@ function getTokens(theme) {
     fontMono:    "'DM Mono', 'Courier New', monospace",
     fontSans:    "'Inter', system-ui, sans-serif",
     bgSubtle:    dark ? "rgba(255,255,255,0.04)"     : "rgba(0,0,0,0.04)",
-    bgInput:     dark ? "rgba(255,255,255,0.06)"     : "rgba(0,0,0,0.05)",
+    bgInput:     dark ? "rgba(255,255,255,0.06)"     : "rgba(0,0,0,0.08)",
     bgUnitSel:   dark ? "rgba(232,160,32,0.18)"      : "rgba(154,104,0,0.15)",
     bgGradient:  dark ? "rgba(20,50,20,0.18)"        : "rgba(60,120,60,0.08)",
     bgGradient2: dark ? "rgba(120,70,30,0.10)"       : "rgba(160,100,30,0.06)",
@@ -777,6 +777,35 @@ function getTokens(theme) {
     tableRowAlt: dark ? "rgba(255,255,255,0.03)"     : "rgba(0,0,0,0.03)",
   };
 }
+
+// ─── COST FIELD TIPS ─────────────────────────────────────────────────────────
+// Plain-language explanations shown under each cost input label.
+const COST_TIPS = {
+  "Seed Cost": {
+    short: "Seeds, cuttings, or seedlings to plant your farm.",
+    detail: "Cassava → stems/cuttings · Maize → certified seeds · Yam → seed yams (setts) · Plantain → suckers · Tomato → transplants. Enter the total you'll spend at the agro-store, not a per-hectare guess.",
+  },
+  "Maintenance": {
+    short: "Pesticides, herbicides, fungicides, and any irrigation costs.",
+    detail: "Includes everything you buy to keep the crop alive after planting: weedkillers, insecticides, fungicide sprays, and fuel for irrigation if you use it. Labour to apply them goes under Labour.",
+  },
+  "Labour": {
+    short: "Wages paid for land prep, planting, weeding, and harvest.",
+    detail: "Count every hired hand: land clearing, ridge/mound making, planting, multiple weeding rounds, and harvest labour. If you or family work unpaid, you can still include an opportunity cost here.",
+  },
+  "Other": {
+    short: "Transport to market, bags/crates, storage, and anything else.",
+    detail: "Common items: truck hire to the market, jute bags or tomato crates, cold store fees if applicable, levies at the market gate. If it costs money and doesn't fit above, put it here.",
+  },
+};
+
+// ─── MODULE-LEVEL TOKEN REFERENCE ─────────────────────────────────────────────
+// Sub-components (QualityDot, AlertBanner, etc.) are defined at module scope but
+// need access to the current theme tokens. This mutable ref is updated at the
+// top of every CropCompass render before any sub-component executes.
+// It is intentionally NOT a React state variable — it's a synchronous render-time
+// side-channel so child components don't need T threaded through as props.
+let T = getTokens("dark");
 
 // ─── UI COMPONENTS ────────────────────────────────────────────────────────────
 function QualityDot({ q }) {
@@ -791,7 +820,7 @@ function QualityDot({ q }) {
 
 function AlertBanner({ variant = "amber", style: extraStyle, children }) {
   const styles = {
-    amber: { bg: T.amberBg,  border: T.amberBorder, color: "#d7b45b" },
+    amber: { bg: T.amberBg,  border: T.amberBorder, color: T.amber },
     red:   { bg: T.redBg,    border: T.redBorder,   color: T.red     },
     green: { bg: T.bgCard,   border: T.border,       color: T.textMid },
   };
@@ -813,7 +842,7 @@ function CustomTooltip({ active, payload, label }) {
   const d = payload[0]?.payload;
   return (
     <div style={{
-      background: "#1a2e1a", border: `1px solid ${T.borderMid}`,
+      background: T.bgCard, border: `1px solid ${T.borderMid}`,
       borderRadius: 8, padding: "10px 14px", fontSize: 13, color: T.text, minWidth: 180,
     }}>
       <div style={{ fontWeight: 700, marginBottom: 4, color: T.amber }}>{label}</div>
@@ -842,6 +871,9 @@ function CostInput({ label, hint, valuePerHa, onChange, max = 500000, step = 500
   const maxTotal = Math.round(max * hectares);
   const stepTotal = Math.max(step, Math.round(step * hectares));
   const [rawTotal, setRawTotal] = useState(String(totalVal));
+  const [tipOpen, setTipOpen] = useState(false);
+
+  const tip = COST_TIPS[label];
 
   useEffect(() => {
     setRawTotal(String(Math.round(valuePerHa * hectares)));
@@ -857,10 +889,24 @@ function CostInput({ label, hint, valuePerHa, onChange, max = 500000, step = 500
   const inputId = `cost-${label.toLowerCase().replace(/\s+/g, "-")}`;
   return (
     <div style={{ marginBottom: 20 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
-        <label htmlFor={inputId} style={{ fontSize: 13, color: T.textMid, fontFamily: T.fontSerif }}>
-          {label}
-        </label>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 2 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <label htmlFor={inputId} style={{ fontSize: 13, color: T.textMid, fontFamily: T.fontSerif }}>
+            {label}
+          </label>
+          {tip && (
+            <button
+              onClick={() => setTipOpen(x => !x)}
+              aria-label={`${tipOpen ? "Hide" : "Show"} info for ${label}`}
+              style={{
+                background: "none", border: `1px solid ${T.border}`, borderRadius: "50%",
+                width: 16, height: 16, fontSize: 9, color: T.textDim, cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                padding: 0, lineHeight: 1, flexShrink: 0,
+              }}
+            >?</button>
+          )}
+        </div>
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <span style={{ fontSize: 11, color: T.textDim }}>₦</span>
           <input
@@ -873,13 +919,29 @@ function CostInput({ label, hint, valuePerHa, onChange, max = 500000, step = 500
             onBlur={e => commitTotal(e.target.value)}
             onKeyDown={e => e.key === "Enter" && commitTotal(rawTotal)}
             style={{
-              width: 90, background: "rgba(255,255,255,0.06)", border: `1px solid ${T.borderMid}`,
+              width: 90, background: T.bgInput, border: `1px solid ${T.borderMid}`,
               borderRadius: 6, padding: "3px 6px", color: T.amber,
               fontSize: 12, fontFamily: T.fontMono, textAlign: "right",
             }}
           />
         </div>
       </div>
+      {/* Short description always visible */}
+      {tip && (
+        <div style={{ fontSize: 11, color: T.textDim, marginBottom: tipOpen ? 4 : 6, lineHeight: 1.4 }}>
+          {tip.short}
+        </div>
+      )}
+      {/* Expandable detail */}
+      {tip && tipOpen && (
+        <div style={{
+          fontSize: 11, color: T.textFaint, lineHeight: 1.5,
+          background: T.bgSubtle, border: `1px solid ${T.border}`,
+          borderRadius: 6, padding: "8px 10px", marginBottom: 6,
+        }}>
+          {tip.detail}
+        </div>
+      )}
       {hint && <div style={{ fontSize: 11, color: T.textDim, marginBottom: 4 }}>{hint}</div>}
       <input
         type="range"
@@ -949,7 +1011,7 @@ function FarmSizeInput({ hectares, onChange }) {
               style={{
                 padding: "2px 8px", fontSize: 10, borderRadius: 4, cursor: "pointer",
                 background: unit === k ? T.amber : T.bgUnitSel,
-                color: unit === k ? "#0d1f0d" : T.textMid,
+                color: unit === k ? T.bg : T.textMid,
                 border: unit === k ? "none" : `1px solid ${T.borderMid}`,
                 fontWeight: unit === k ? 700 : 400,
               }}
@@ -1067,7 +1129,7 @@ function YieldInput({ crop, hectares, yieldPerHa, onChange }) {
         ≈ {yieldPerHa.toFixed(1)} t/ha · SW Nigeria typical: {meta.yieldRange.min}–{meta.yieldRange.max} t/ha
       </div>
       {isOutOfRange && (
-        <div role="alert" style={{ fontSize: 11, color: "#d7b45b", marginBottom: 4, lineHeight: 1.4 }}>
+        <div role="alert" style={{ fontSize: 11, color: T.amber, marginBottom: 4, lineHeight: 1.4 }}>
           ⚠ This yield is outside the typical SW Nigeria range. Check the count is for your whole farm, not per hectare.
         </div>
       )}
@@ -1213,7 +1275,8 @@ export default function CropCompass() {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: light)").matches) return "light";
     return "dark";
   });
-  const T = getTokens(theme);
+  // Update the module-level T reference so all sub-components see current tokens.
+  T = getTokens(theme);
 
   const [step, setStep] = useState(1);
   const [crop, setCrop] = useState(null);
@@ -1429,8 +1492,8 @@ export default function CropCompass() {
               </div>
             )}
 
-            {/* ─── STEPS 1 + 2 HEADER ─── */}
-            {step <= 2 && (
+            {/* ─── STEP 1: Hero + crop selection ─── */}
+            {step === 1 && (
               <>
                 <div style={{ marginBottom: 32, textAlign: "center" }}>
                 <h1 style={{
@@ -1472,7 +1535,7 @@ export default function CropCompass() {
                   <div style={{ fontSize: 28, marginBottom: 6 }} aria-hidden="true">{m.emoji}</div>
                   <div style={{
                     fontFamily: T.fontSerif, fontSize: 16, fontWeight: 600,
-                    color: crop === name ? T.amber : "#c8e6c9",
+                    color: crop === name ? T.amber : T.text,
                   }}>
                     {name}
                   </div>
@@ -1482,22 +1545,21 @@ export default function CropCompass() {
                 </div>
               ))}
             </div>
-
-            {step === 2 && crop && (
-              <button
-                onClick={() => setStep(1)}
-                style={{
-                  background: "none", border: "none", cursor: "pointer",
-                  color: T.textDim, fontSize: 11, marginBottom: 24,
-                }}
-              >
-                ← Change crop
-              </button>
+            </>
             )}
 
             {/* ─── STEP 2 INPUTS ─── */}
             {step === 2 && crop && (
               <>
+                <button
+                  onClick={() => setStep(1)}
+                  style={{
+                    background: "none", border: "none", cursor: "pointer",
+                    color: T.textDim, fontSize: 11, marginBottom: 24,
+                  }}
+                >
+                  ← Change crop
+                </button>
                 <div style={{ marginBottom: 32 }}>
                 <h2 style={{ fontFamily: T.fontSerif, fontSize: 28, fontWeight: 400, marginBottom: 8 }}>
                   {meta.emoji} Farm Details
@@ -1575,7 +1637,17 @@ export default function CropCompass() {
                   </div>
                 </div>
 
-                <CostInput label="Seed Cost" hint={meta.note} valuePerHa={seedCostPerHa} onChange={setSeedCostPerHa} hectares={hectares} />
+                {meta.note && (
+                  <div style={{
+                    fontSize: 11, color: T.textDim, background: T.bgSubtle,
+                    border: `1px solid ${T.border}`, borderRadius: 8,
+                    padding: "8px 12px", marginBottom: 16, lineHeight: 1.5,
+                  }}>
+                    💡 {meta.note}
+                  </div>
+                )}
+
+                <CostInput label="Seed Cost" valuePerHa={seedCostPerHa} onChange={setSeedCostPerHa} hectares={hectares} />
                 <CostInput label="Maintenance" valuePerHa={maintenanceCostPerHa} onChange={setMaintenanceCostPerHa} hectares={hectares} />
                 <CostInput label="Labour" valuePerHa={labourCostPerHa} onChange={setLabourCostPerHa} hectares={hectares} />
                 <CostInput label="Other" valuePerHa={otherCostPerHa} onChange={setOtherCostPerHa} hectares={hectares} />
@@ -1586,7 +1658,7 @@ export default function CropCompass() {
                 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
                     <span style={{ fontSize: 13, color: T.textMid, fontWeight: 600 }}>Total spend to plant</span>
-                    <span style={{ fontSize: 22, fontWeight: 700, color: "#d4a574", fontFamily: T.fontMono }}>
+                    <span style={{ fontSize: 22, fontWeight: 700, color: T.amber, fontFamily: T.fontMono }}>
                       {fmt(totalCost)}
                     </span>
                   </div>
@@ -1615,7 +1687,7 @@ export default function CropCompass() {
                   className="btn-primary"
                   style={{
                     flex: 2, padding: "12px", background: calculating ? T.textDim : T.amber, border: "none",
-                    borderRadius: 8, color: "#0d1f0d", fontWeight: 600,
+                    borderRadius: 8, color: T.bg, fontWeight: 600,
                     cursor: calculating ? "not-allowed" : "pointer", fontSize: 13,
                     opacity: calculating ? 0.7 : 1,
                   }}
@@ -1624,8 +1696,6 @@ export default function CropCompass() {
                 </button>
               </div>
             </>
-            )}
-          </>
             )}
 
             {/* ─── STEP 3 RESULTS ─── */}
@@ -1665,7 +1735,7 @@ export default function CropCompass() {
                         onClick={handleShare}
                         className="btn-primary"
                         style={{
-                          padding: "10px 14px", background: T.amber, color: "#0d1f0d",
+                          padding: "10px 14px", background: T.amber, color: T.bg,
                           border: "none", borderRadius: 8, cursor: "pointer", fontSize: 12, fontWeight: 600,
                         }}
                       >
@@ -1868,7 +1938,7 @@ export default function CropCompass() {
                             <th style={{ padding: "10px 12px", textAlign: "right", color: T.textMid, fontWeight: 500 }}>Price</th>
                             <th style={{ padding: "10px 12px", textAlign: "right", color: T.textMid, fontWeight: 500 }}>Profit Range</th>
                             <th style={{ padding: "10px 12px", textAlign: "right", color: T.textMid, fontWeight: 500 }}>Mid</th>
-                            <th style={{ padding: "10px 12px", textAlign: "center", color: T.textMid, fontWeight: 500 }}>Q</th>
+                            <th style={{ padding: "10px 12px", textAlign: "center", color: T.textMid, fontWeight: 500 }}>Quality</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1887,7 +1957,16 @@ export default function CropCompass() {
                                 {fmt(r.profit)}
                               </td>
                               <td style={{ padding: "10px 12px", textAlign: "center" }}>
-                                <QualityDot q={r.quality} />
+                                <span style={{
+                                  display: "inline-block",
+                                  fontSize: 10, fontWeight: 600, letterSpacing: "0.04em",
+                                  padding: "2px 6px", borderRadius: 4,
+                                  background: (QUALITY_TIERS[r.quality]?.color || "#888") + "22",
+                                  color: QUALITY_TIERS[r.quality]?.color || T.textDim,
+                                  border: `1px solid ${(QUALITY_TIERS[r.quality]?.color || "#888")}44`,
+                                }}>
+                                  {r.quality || "—"}
+                                </span>
                               </td>
                             </tr>
                           ))}
