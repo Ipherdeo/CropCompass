@@ -1,0 +1,887 @@
+{
+  "Cassava": [
+    {
+      "month": "May-23",
+      "price": 366.99,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jun-23",
+      "price": 403.15,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-23",
+      "price": 434.73,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Aug-23",
+      "price": 445,
+      "quality": "LOW"
+    },
+    {
+      "month": "Sep-23",
+      "price": 467.89,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-23",
+      "price": 490,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-23",
+      "price": 548.95,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-23",
+      "price": 563.07,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jan-24",
+      "price": 613.27,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Feb-24",
+      "price": 860,
+      "quality": "MED"
+    },
+    {
+      "month": "Mar-24",
+      "price": 894.51,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Apr-24",
+      "price": 870,
+      "quality": "MED"
+    },
+    {
+      "month": "May-24",
+      "price": 1114.72,
+      "quality": "MED"
+    },
+    {
+      "month": "Jun-24",
+      "price": 1199.63,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-24",
+      "price": 1175,
+      "quality": "MED"
+    },
+    {
+      "month": "Aug-24",
+      "price": 1124.4,
+      "quality": "MED"
+    },
+    {
+      "month": "Sep-24",
+      "price": 1135.47,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Oct-24",
+      "price": 1163.95,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Nov-24",
+      "price": 1180,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-24",
+      "price": 1175,
+      "quality": "LOW"
+    },
+    {
+      "month": "Jan-25",
+      "price": 980,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-25",
+      "price": 950,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-25",
+      "price": 900,
+      "quality": "EST"
+    },
+    {
+      "month": "Apr-25",
+      "price": 880,
+      "quality": "EST"
+    },
+    {
+      "month": "May-25",
+      "price": 870,
+      "quality": "EST"
+    },
+    {
+      "month": "Jun-25",
+      "price": 860,
+      "quality": "EST"
+    },
+    {
+      "month": "Jul-25",
+      "price": 855,
+      "quality": "EST"
+    },
+    {
+      "month": "Aug-25",
+      "price": 862,
+      "quality": "EST"
+    },
+    {
+      "month": "Sep-25",
+      "price": 871.78,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-25",
+      "price": 1020,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-25",
+      "price": 980,
+      "quality": "EST"
+    },
+    {
+      "month": "Dec-25",
+      "price": 960,
+      "quality": "EST"
+    },
+    {
+      "month": "Jan-26",
+      "price": 820,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-26",
+      "price": 810,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-26",
+      "price": 801.54,
+      "quality": "MED"
+    }
+  ],
+  "Maize": [
+    {
+      "month": "May-23",
+      "price": 363.71,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jun-23",
+      "price": 378.71,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-23",
+      "price": 536.47,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Aug-23",
+      "price": 540,
+      "quality": "LOW"
+    },
+    {
+      "month": "Sep-23",
+      "price": 566.93,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-23",
+      "price": 548.96,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-23",
+      "price": 557.33,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-23",
+      "price": 529.25,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jan-24",
+      "price": 527.44,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Feb-24",
+      "price": 560,
+      "quality": "MED"
+    },
+    {
+      "month": "Mar-24",
+      "price": 785.81,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Apr-24",
+      "price": 800,
+      "quality": "MED"
+    },
+    {
+      "month": "May-24",
+      "price": 950.16,
+      "quality": "MED"
+    },
+    {
+      "month": "Jun-24",
+      "price": 1017.7,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-24",
+      "price": 1000,
+      "quality": "MED"
+    },
+    {
+      "month": "Aug-24",
+      "price": 1028.33,
+      "quality": "MED"
+    },
+    {
+      "month": "Sep-24",
+      "price": 1138.07,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Oct-24",
+      "price": 1156.69,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Nov-24",
+      "price": 1170,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-24",
+      "price": 1150,
+      "quality": "LOW"
+    },
+    {
+      "month": "Jan-25",
+      "price": 1000,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-25",
+      "price": 980,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-25",
+      "price": 920,
+      "quality": "EST"
+    },
+    {
+      "month": "Apr-25",
+      "price": 900,
+      "quality": "EST"
+    },
+    {
+      "month": "May-25",
+      "price": 890,
+      "quality": "EST"
+    },
+    {
+      "month": "Jun-25",
+      "price": 880,
+      "quality": "EST"
+    },
+    {
+      "month": "Jul-25",
+      "price": 870,
+      "quality": "EST"
+    },
+    {
+      "month": "Aug-25",
+      "price": 875,
+      "quality": "EST"
+    },
+    {
+      "month": "Sep-25",
+      "price": 880,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-25",
+      "price": 900,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-25",
+      "price": 870,
+      "quality": "EST"
+    },
+    {
+      "month": "Dec-25",
+      "price": 850,
+      "quality": "EST"
+    },
+    {
+      "month": "Jan-26",
+      "price": 830,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-26",
+      "price": 820,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-26",
+      "price": 810,
+      "quality": "MED"
+    }
+  ],
+  "Plantain": [
+    {
+      "month": "May-23",
+      "price": 559.18,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jun-23",
+      "price": 450.19,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-23",
+      "price": 597.92,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Aug-23",
+      "price": 620,
+      "quality": "LOW"
+    },
+    {
+      "month": "Sep-23",
+      "price": 586.43,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-23",
+      "price": 627.5,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-23",
+      "price": 693.65,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-23",
+      "price": 913.63,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jan-24",
+      "price": 924.4,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Feb-24",
+      "price": 880,
+      "quality": "MED"
+    },
+    {
+      "month": "Mar-24",
+      "price": 1080.68,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Apr-24",
+      "price": 1050,
+      "quality": "MED"
+    },
+    {
+      "month": "May-24",
+      "price": 1106.33,
+      "quality": "MED"
+    },
+    {
+      "month": "Jun-24",
+      "price": 2285.4,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-24",
+      "price": 1400,
+      "quality": "MED"
+    },
+    {
+      "month": "Aug-24",
+      "price": 1492.63,
+      "quality": "MED"
+    },
+    {
+      "month": "Sep-24",
+      "price": 1941.74,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Oct-24",
+      "price": 1978.54,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Nov-24",
+      "price": 1960,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-24",
+      "price": 1900,
+      "quality": "LOW"
+    },
+    {
+      "month": "Jan-25",
+      "price": 1650,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-25",
+      "price": 1580,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-25",
+      "price": 1500,
+      "quality": "EST"
+    },
+    {
+      "month": "Apr-25",
+      "price": 1450,
+      "quality": "EST"
+    },
+    {
+      "month": "May-25",
+      "price": 1420,
+      "quality": "EST"
+    },
+    {
+      "month": "Jun-25",
+      "price": 1800,
+      "quality": "EST"
+    },
+    {
+      "month": "Jul-25",
+      "price": 1900,
+      "quality": "EST"
+    },
+    {
+      "month": "Aug-25",
+      "price": 1950,
+      "quality": "EST"
+    },
+    {
+      "month": "Sep-25",
+      "price": 1980,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-25",
+      "price": 1970,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-25",
+      "price": 1900,
+      "quality": "EST"
+    },
+    {
+      "month": "Dec-25",
+      "price": 1850,
+      "quality": "EST"
+    },
+    {
+      "month": "Jan-26",
+      "price": 1600,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-26",
+      "price": 1550,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-26",
+      "price": 1500,
+      "quality": "MED"
+    }
+  ],
+  "Tomato": [
+    {
+      "month": "May-23",
+      "price": 511.58,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jun-23",
+      "price": 547.28,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-23",
+      "price": 678.95,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Aug-23",
+      "price": 660,
+      "quality": "LOW"
+    },
+    {
+      "month": "Sep-23",
+      "price": 565.69,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-23",
+      "price": 675.91,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-23",
+      "price": 758.65,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-23",
+      "price": 1068.17,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jan-24",
+      "price": 1029.25,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Feb-24",
+      "price": 960,
+      "quality": "MED"
+    },
+    {
+      "month": "Mar-24",
+      "price": 1067.83,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Apr-24",
+      "price": 1123.41,
+      "quality": "MED"
+    },
+    {
+      "month": "May-24",
+      "price": 1479.69,
+      "quality": "MED"
+    },
+    {
+      "month": "Jun-24",
+      "price": 3261.84,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-24",
+      "price": 1693.83,
+      "quality": "MED"
+    },
+    {
+      "month": "Aug-24",
+      "price": 1506.35,
+      "quality": "MED"
+    },
+    {
+      "month": "Sep-24",
+      "price": 1595.54,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Oct-24",
+      "price": 1717.58,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Nov-24",
+      "price": 1700,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-24",
+      "price": 1650,
+      "quality": "LOW"
+    },
+    {
+      "month": "Jan-25",
+      "price": 1400,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-25",
+      "price": 1350,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-25",
+      "price": 1300,
+      "quality": "EST"
+    },
+    {
+      "month": "Apr-25",
+      "price": 1280,
+      "quality": "EST"
+    },
+    {
+      "month": "May-25",
+      "price": 1250,
+      "quality": "EST"
+    },
+    {
+      "month": "Jun-25",
+      "price": 1500,
+      "quality": "EST"
+    },
+    {
+      "month": "Jul-25",
+      "price": 1600,
+      "quality": "EST"
+    },
+    {
+      "month": "Aug-25",
+      "price": 1550,
+      "quality": "EST"
+    },
+    {
+      "month": "Sep-25",
+      "price": 1280,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-25",
+      "price": 1269.17,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-25",
+      "price": 1200,
+      "quality": "EST"
+    },
+    {
+      "month": "Dec-25",
+      "price": 1180,
+      "quality": "EST"
+    },
+    {
+      "month": "Jan-26",
+      "price": 1150,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-26",
+      "price": 1140,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-26",
+      "price": 1153.14,
+      "quality": "MED"
+    }
+  ],
+  "Yam": [
+    {
+      "month": "May-23",
+      "price": 632.6,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jun-23",
+      "price": 510.77,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-23",
+      "price": 739.83,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Aug-23",
+      "price": 720,
+      "quality": "LOW"
+    },
+    {
+      "month": "Sep-23",
+      "price": 593.83,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-23",
+      "price": 687.68,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-23",
+      "price": 700,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-23",
+      "price": 1163.57,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jan-24",
+      "price": 1033.91,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Feb-24",
+      "price": 1009.56,
+      "quality": "MED"
+    },
+    {
+      "month": "Mar-24",
+      "price": 1068.78,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Apr-24",
+      "price": 1130.37,
+      "quality": "MED"
+    },
+    {
+      "month": "May-24",
+      "price": 1322.36,
+      "quality": "MED"
+    },
+    {
+      "month": "Jun-24",
+      "price": 2745.8,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Jul-24",
+      "price": 1802.84,
+      "quality": "MED"
+    },
+    {
+      "month": "Aug-24",
+      "price": 1661.8,
+      "quality": "MED"
+    },
+    {
+      "month": "Sep-24",
+      "price": 1896.37,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Oct-24",
+      "price": 1975.45,
+      "quality": "HIGH"
+    },
+    {
+      "month": "Nov-24",
+      "price": 2000,
+      "quality": "MED"
+    },
+    {
+      "month": "Dec-24",
+      "price": 1980,
+      "quality": "LOW"
+    },
+    {
+      "month": "Jan-25",
+      "price": 1700,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-25",
+      "price": 1650,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-25",
+      "price": 1600,
+      "quality": "EST"
+    },
+    {
+      "month": "Apr-25",
+      "price": 1580,
+      "quality": "EST"
+    },
+    {
+      "month": "May-25",
+      "price": 1550,
+      "quality": "EST"
+    },
+    {
+      "month": "Jun-25",
+      "price": 1700,
+      "quality": "EST"
+    },
+    {
+      "month": "Jul-25",
+      "price": 1800,
+      "quality": "EST"
+    },
+    {
+      "month": "Aug-25",
+      "price": 1850,
+      "quality": "EST"
+    },
+    {
+      "month": "Sep-25",
+      "price": 1900,
+      "quality": "MED"
+    },
+    {
+      "month": "Oct-25",
+      "price": 1913.78,
+      "quality": "MED"
+    },
+    {
+      "month": "Nov-25",
+      "price": 1850,
+      "quality": "EST"
+    },
+    {
+      "month": "Dec-25",
+      "price": 1800,
+      "quality": "EST"
+    },
+    {
+      "month": "Jan-26",
+      "price": 1700,
+      "quality": "EST"
+    },
+    {
+      "month": "Feb-26",
+      "price": 1680,
+      "quality": "EST"
+    },
+    {
+      "month": "Mar-26",
+      "price": 1650,
+      "quality": "MED"
+    }
+  ]
+}

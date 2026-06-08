@@ -1,0 +1,117 @@
+{
+  "Cassava": {
+    "emoji": "🌿",
+    "growthMonths": {
+      "min": 9,
+      "max": 12
+    },
+    "yieldRange": {
+      "min": 8,
+      "max": 15
+    },
+    "defaultYield": 10,
+    "farmgateDiscount": 0.55,
+    "seedCostHintPerHa": 25000,
+    "maintenanceCostHintPerHa": 12000,
+    "labourCostHintPerHa": 20000,
+    "otherCostHintPerHa": 8000,
+    "note": "Garri white used as price proxy. Farmgate ~45% below market due to middleman margin.",
+    "color": "#558B2F",
+    "seasonNarrative": {
+      "lean": "Jan–Mar prices drop as stockpiled roots from the prior harvest reach markets.",
+      "peak": "Oct–Nov prices rise as dry-season demand outpaces supply from the long-season crop."
+    }
+  },
+  "Maize": {
+    "emoji": "🌽",
+    "growthMonths": {
+      "min": 3,
+      "max": 4
+    },
+    "yieldRange": {
+      "min": 2,
+      "max": 5
+    },
+    "defaultYield": 3,
+    "farmgateDiscount": 0.62,
+    "seedCostHintPerHa": 15000,
+    "maintenanceCostHintPerHa": 8000,
+    "labourCostHintPerHa": 15000,
+    "otherCostHintPerHa": 5000,
+    "note": "Two seasons possible. Season 1 (Mar–Apr plant) typically yields higher prices at harvest.",
+    "color": "#F9A825",
+    "seasonNarrative": {
+      "lean": "May–Jul prices drop as the main-season harvest floods the market.",
+      "peak": "Sep–Nov prices recover as off-season stocks run low before the second harvest."
+    }
+  },
+  "Plantain": {
+    "emoji": "🍌",
+    "growthMonths": {
+      "min": 9,
+      "max": 12
+    },
+    "yieldRange": {
+      "min": 10,
+      "max": 20
+    },
+    "defaultYield": 12,
+    "farmgateDiscount": 0.58,
+    "seedCostHintPerHa": 30000,
+    "maintenanceCostHintPerHa": 18000,
+    "labourCostHintPerHa": 22000,
+    "otherCostHintPerHa": 10000,
+    "note": "SW Nigeria has the highest national plantain prices. Aug–Oct is the peak window.",
+    "color": "#FBC02D",
+    "seasonNarrative": {
+      "lean": "Feb–Apr prices fall as the long-season crop peaks in SW markets.",
+      "peak": "Aug–Oct prices spike — lean-season supply shortage drives Sallah demand."
+    }
+  },
+  "Tomato": {
+    "emoji": "🍅",
+    "growthMonths": {
+      "min": 3,
+      "max": 4
+    },
+    "yieldRange": {
+      "min": 15,
+      "max": 40
+    },
+    "defaultYield": 17,
+    "farmgateDiscount": 0.5,
+    "seedCostHintPerHa": 20000,
+    "maintenanceCostHintPerHa": 25000,
+    "labourCostHintPerHa": 18000,
+    "otherCostHintPerHa": 12000,
+    "note": "Highly volatile. Jun-24 reached ₦3,262/kg — a real lean-season spike. Build this risk into your timing.",
+    "color": "#C62828",
+    "seasonNarrative": {
+      "lean": "May–Jul prices can spike or crash violently as dry-season supply collapses.",
+      "peak": "Dec–Feb prices are typically the most stable, driven by harmattan demand."
+    }
+  },
+  "Yam": {
+    "emoji": "🥔",
+    "growthMonths": {
+      "min": 7,
+      "max": 9
+    },
+    "yieldRange": {
+      "min": 10,
+      "max": 25
+    },
+    "defaultYield": 12,
+    "farmgateDiscount": 0.6,
+    "seedCostHintPerHa": 50000,
+    "maintenanceCostHintPerHa": 15000,
+    "labourCostHintPerHa": 25000,
+    "otherCostHintPerHa": 10000,
+    "note": "New Yam Festival (Aug–Sep) drives price peaks. Aug–Nov is historically strong.",
+    "color": "#6D4C41",
+    "seasonNarrative": {
+      "lean": "Apr–Jun prices are suppressed as stored yams from the prior season meet early new yam.",
+      "peak": "Aug–Oct prices peak around New Yam Festival demand."
+    }
+  }
+}

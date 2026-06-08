@@ -1,0 +1,87 @@
+{
+  "Cassava": [
+    {
+      "label": "90-L baskets",
+      "ratio": 0.027,
+      "peakPerHa": 550
+    },
+    {
+      "label": "100 kg bags",
+      "ratio": 0.1,
+      "peakPerHa": 150
+    },
+    {
+      "label": "tonnes",
+      "ratio": 1,
+      "peakPerHa": 15
+    }
+  ],
+  "Maize": [
+    {
+      "label": "50 kg bags",
+      "ratio": 0.05,
+      "peakPerHa": 100
+    },
+    {
+      "label": "100 kg bags",
+      "ratio": 0.1,
+      "peakPerHa": 50
+    },
+    {
+      "label": "tonnes",
+      "ratio": 1,
+      "peakPerHa": 5
+    }
+  ],
+  "Plantain": [
+    {
+      "label": "bunches (~10 kg)",
+      "ratio": 0.01,
+      "peakPerHa": 2000
+    },
+    {
+      "label": "100 kg crates",
+      "ratio": 0.1,
+      "peakPerHa": 200
+    },
+    {
+      "label": "tonnes",
+      "ratio": 1,
+      "peakPerHa": 20
+    }
+  ],
+  "Tomato": [
+    {
+      "label": "crates (30–35 kg)",
+      "ratio": 0.0325,
+      "peakPerHa": 1230
+    },
+    {
+      "label": "half-crates (~18 kg)",
+      "ratio": 0.018,
+      "peakPerHa": 2220
+    },
+    {
+      "label": "tonnes",
+      "ratio": 1,
+      "peakPerHa": 40
+    }
+  ],
+  "Yam": [
+    {
+      "label": "tubers (~2 kg)",
+      "ratio": 0.002,
+      "peakPerHa": 12500
+    },
+    {
+      "label": "100 kg bags",
+      "ratio": 0.1,
+      "peakPerHa": 250
+    },
+    {
+      "label": "tonnes",
+      "ratio": 1,
+      "peakPerHa": 25
+    }
+  ]
+}

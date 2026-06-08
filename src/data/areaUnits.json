@@ -1,0 +1,14 @@
+{
+  "plots": {
+    "toHa": 0.0468,
+    "symbol": "plots"
+  },
+  "acres": {
+    "toHa": 0.4047,
+    "symbol": "acres"
+  },
+  "hectares": {
+    "toHa": 1,
+    "symbol": "ha"
+  }
+}

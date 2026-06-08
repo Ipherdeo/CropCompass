@@ -1,0 +1,97 @@
+{
+  "Cassava": {
+    "type": "NPK 20:10:10 or 12:12:17",
+    "kgPerHa": 300,
+    "note": "Don't over-apply — too much fertilizer on cassava gives you leafy plants, not big tubers.",
+    "splits": [
+      {
+        "fraction": 0.5,
+        "weekAfterPlanting": 6,
+        "label": "At 4–6 weeks"
+      },
+      {
+        "fraction": 0.5,
+        "weekAfterPlanting": 13,
+        "label": "At 3 months"
+      }
+    ]
+  },
+  "Maize": {
+    "type": "NPK 15:15:15 (basal) + Urea top-dress",
+    "kgPerHa": 400,
+    "note": "Urea top-dress nitrogen drives grain fill. Don't skip it.",
+    "splits": [
+      {
+        "fraction": 0.5,
+        "weekAfterPlanting": 0,
+        "label": "At planting (NPK basal)"
+      },
+      {
+        "fraction": 0.5,
+        "weekAfterPlanting": 4,
+        "label": "3–4 weeks (Urea top-dress)"
+      }
+    ]
+  },
+  "Plantain": {
+    "type": "NPK 15:15:15",
+    "kgPerHa": 250,
+    "note": "Potassium drives bunch weight. Don't substitute a low-K fertilizer.",
+    "splits": [
+      {
+        "fraction": 0.34,
+        "weekAfterPlanting": 0,
+        "label": "At planting"
+      },
+      {
+        "fraction": 0.33,
+        "weekAfterPlanting": 13,
+        "label": "At 3 months"
+      },
+      {
+        "fraction": 0.33,
+        "weekAfterPlanting": 26,
+        "label": "At 6 months"
+      }
+    ]
+  },
+  "Tomato": {
+    "type": "NPK 15:15:15 (basal) + CAN top-dress",
+    "kgPerHa": 350,
+    "note": "Skipping the CAN top-dress at flowering is the most common yield-loss cause.",
+    "splits": [
+      {
+        "fraction": 0.34,
+        "weekAfterPlanting": 0,
+        "label": "At transplanting (NPK)"
+      },
+      {
+        "fraction": 0.33,
+        "weekAfterPlanting": 5,
+        "label": "At flowering (CAN)"
+      },
+      {
+        "fraction": 0.33,
+        "weekAfterPlanting": 9,
+        "label": "At fruiting (CAN)"
+      }
+    ]
+  },
+  "Yam": {
+    "type": "NPK 12:12:17 (K-rich)",
+    "kgPerHa": 300,
+    "note": "High K supports tuber starch accumulation. Apply before the mound collapses.",
+    "splits": [
+      {
+        "fraction": 0.5,
+        "weekAfterPlanting": 0,
+        "label": "At mound prep"
+      },
+      {
+        "fraction": 0.5,
+        "weekAfterPlanting": 6,
+        "label": "6 weeks after sprouting"
+      }
+    ]
+  }
+}
