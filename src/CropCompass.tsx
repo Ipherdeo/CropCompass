@@ -226,12 +226,18 @@ const LOCAL_YIELD_UNITS = {
     { label: "tonnes",            ratio: 1,       peakPerHa: 20   },
   ],
   Tomato:   [
-    { label: "crates (30–35 kg)", ratio: 0.0325,  peakPerHa: 1230 },
-    { label: "half-crates (~18 kg)", ratio: 0.018, peakPerHa: 2220 },
+    // Farmer-confirmed: standard SW Nigeria tomato crate is 20-35 kg (varies by market)
+    { label: "crates (20-35 kg)", ratio: 0.0275,  peakPerHa: 1450 },
+    { label: "half-crates (~15 kg)", ratio: 0.015, peakPerHa: 2660 },
+    // Beds: common for nursery-based tomato farmers
+    { label: "beds (~0.25 t)",    ratio: 0.25,    peakPerHa: 160  },
     { label: "tonnes",            ratio: 1,       peakPerHa: 40   },
   ],
   Yam:      [
-    { label: "tubers (~2 kg)",    ratio: 0.002,   peakPerHa: 12500 },
+    // Farmer-confirmed: tubers above ~1,500/ha are unrealistic locally - cap enforced
+    { label: "tubers (~2 kg)",    ratio: 0.002,   peakPerHa: 1500 },
+    // Heaps: each mound/heap holds 1-2 seed yams; ~1,000-1,200 heaps/ha standard
+    { label: "heaps (~4 kg/heap)", ratio: 0.004,  peakPerHa: 750  },
     { label: "100 kg bags",       ratio: 0.1,     peakPerHa: 250  },
     { label: "tonnes",            ratio: 1,       peakPerHa: 25   },
   ],
@@ -781,12 +787,12 @@ function getTokens(theme) {
 // ─── COST FIELD TIPS ─────────────────────────────────────────────────────────
 // Plain-language explanations shown under each cost input label.
 const COST_TIPS = {
-  "Seed Cost": {
-    short: "Seeds, cuttings, or seedlings to plant your farm.",
-    detail: "Cassava → stems/cuttings · Maize → certified seeds · Yam → seed yams (setts) · Plantain → suckers · Tomato → transplants. Enter the total you'll spend at the agro-store, not a per-hectare guess.",
+  "Nursery Preparation": {
+    short: "Nursery prep, seeds, cuttings, or seedlings — everything before transplanting.",
+    detail: "Cassava → stems/cuttings · Maize → certified seeds · Yam → seed yams (setts) · Plantain → suckers · Tomato → nursery transplants/beds. Enter your actual agro-dealer spend, not a per-hectare estimate.",
   },
-  "Maintenance": {
-    short: "Pesticides, herbicides, fungicides, and any irrigation costs.",
+  "Farm Inputs": {
+    short: "All farm inputs: pesticides, herbicides, fungicides, fertiliser top-ups, irrigation.",
     detail: "Includes everything you buy to keep the crop alive after planting: weedkillers, insecticides, fungicide sprays, and fuel for irrigation if you use it. Labour to apply them goes under Labour.",
   },
   "Labour": {
@@ -1647,8 +1653,8 @@ export default function CropCompass() {
                   </div>
                 )}
 
-                <CostInput label="Seed Cost" valuePerHa={seedCostPerHa} onChange={setSeedCostPerHa} hectares={hectares} />
-                <CostInput label="Maintenance" valuePerHa={maintenanceCostPerHa} onChange={setMaintenanceCostPerHa} hectares={hectares} />
+                <CostInput label="Nursery Preparation" valuePerHa={seedCostPerHa} onChange={setSeedCostPerHa} hectares={hectares} />
+                <CostInput label="Farm Inputs" valuePerHa={maintenanceCostPerHa} onChange={setMaintenanceCostPerHa} hectares={hectares} />
                 <CostInput label="Labour" valuePerHa={labourCostPerHa} onChange={setLabourCostPerHa} hectares={hectares} />
                 <CostInput label="Other" valuePerHa={otherCostPerHa} onChange={setOtherCostPerHa} hectares={hectares} />
 
